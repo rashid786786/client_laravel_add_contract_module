@@ -510,7 +510,7 @@
   {{-- contetn shows here --}}
   @yield('contents')
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  {{-- <div class="content-wrapper">
     <!-- Content Header (Page hxeader) -->
     <section class="content-header">
       <h1>
@@ -521,7 +521,7 @@
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
-    </section>
+    </section> --}}
 
     <!-- Main content -->
     
