@@ -1,0 +1,12 @@
+[14-Apr-2019 00:24:46 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:234
+Stack trace:
+#0 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(397): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(374): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(289): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(188): Illuminate\Foundation\Exceptions\Handler->prepar in /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 234
+[14-Apr-2019 00:25:13 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:234
+Stack trace:
+#0 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(397): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(374): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(289): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(188): Illuminate\Foundation\Exceptions\Handler->prepar in /home1/karlos74/dashboard.karloscabral.com.br/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 234
