@@ -17,6 +17,11 @@ Route::get('/', function () {
     return redirect()->to('login');
 });
 
+//contact routes
+Route::prefix('dashboard')->group(function () {
+    Route::get('/add', 'ContactController@index');
+});
+
 Route::get('SetLocale/{locale}', function ($locale) {
     Session::put('locale',$locale);
     return redirect()->back();

@@ -507,9 +507,11 @@
     <!-- /.sidebar -->
   </aside>
 
+  {{-- contetn shows here --}}
+  @yield('contents')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <!-- Content Header (Page hxeader) -->
     <section class="content-header">
       <h1>
         Dashboard
@@ -522,7 +524,8 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    
+    {{-- <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
@@ -1023,7 +1026,7 @@
       </div>
       <!-- /.row (main row) -->
 
-    </section>
+    </section> --}}
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
