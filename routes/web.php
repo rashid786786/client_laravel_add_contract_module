@@ -14,12 +14,27 @@
 use Illuminate\Support\Facades\App;
 
 Route::get('/', function () {
-    return redirect()->to('login');
+    return view('dashboard.contact.add_contact');
+    //return redirect()->to('login');
 });
 
 //contact routes
-Route::prefix('dashboard')->group(function () {
-    Route::get('/add', 'ContactController@index');
+Route::prefix('dashboard/contact/')->group(function () {
+    Route::get('/add', 'ContactController@create')->name('contact.add');
+    Route::post('/store', 'ContactController@store')->name('contact.store');
+    Route::get('/show', 'ContactController@index')->name('contact.show');
+    Route::get('/edit/{id}', 'ContactController@edit')->name('contact.edit');
+    Route::get('/delete/{id}', 'ContactController@destroy')->name('contact.destroy');
+    Route::post('/update/{id}', 'ContactController@update')->name('contact.update');
+});
+
+//category routes
+Route::prefix('dashboard/category/')->group(function () {
+    Route::post('/add', 'CategoryController@create')->name('category.add');
+    Route::get('/show', 'CategoryController@index')->name('category.show');
+    Route::get('/edit/{id}', 'CategoryController@edit')->name('category.edit');
+    Route::get('/delete/{id}', 'CategoryController@destroy')->name('category.destroy');
+    Route::post('/update/{id}', 'CategoryController@update')->name('category.update');
 });
 
 Route::get('SetLocale/{locale}', function ($locale) {

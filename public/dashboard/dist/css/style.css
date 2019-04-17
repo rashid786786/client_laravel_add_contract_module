@@ -1,0 +1,21 @@
+.set_margin_top{
+    margin-top: 2%;
+}
+.contact_add_button{
+    margin-bottom: 20px;
+      width: 150px;
+      font-family: sans-serif;
+      height: 50px;
+      font-weight: 400;
+      font-size: 20px;
+  
+}
+
+span#id{
+    color: red;
+}
+.set_alert_position
+{
+        margin-right: 120%;
+    margin-top: -6px;
+}
