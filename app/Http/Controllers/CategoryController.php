@@ -15,9 +15,30 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category_a =Category::getSingleCategory($category_name='category_a');
+        $phone_type = Category::getSingleCategory($category_name='phone_type');
+        $address_type = Category::getSingleCategory($category_name='address_type');
+        $partnership_type = Category::getSingleCategory($category_name='partnership_type');
+        $political_party = Category::getSingleCategory($category_name='political_party');
+        $marrital_status = Category::getSingleCategory($category_name='marrital_status');
+        $occupation = Category::getSingleCategory($category_name='occupation');
+        $religion = Category::getSingleCategory($category_name='religion');
+        $group_of_interest = Category::getSingleCategory($category_name='group_of_interest');
+        ;
+        return view('dashboard.category.show_categories',
+        [
+            'phone_type'=>$phone_type,
+            'address_type'=>$address_type,
+            'partnership_type'=>$partnership_type,
+            'political_party'=>$political_party,
+            'marrital_status'=>$marrital_status,
+            'occupation'=>$occupation,
+            'religion'=>$religion,
+            'group_of_interest'=>$group_of_interest,
+        ]
 
-        return view('dashboard.category.show_categories',['category_a'=>$category_a]);
+
+
+    );
     }
 
     /**
@@ -37,7 +58,7 @@ class CategoryController extends Controller
             return redirect()->route('category.show');
            }
 
-       } 
+       }
     }
 
     /**
@@ -98,7 +119,7 @@ class CategoryController extends Controller
             if($result)
             {
                 \Session::flash('key', ['class'=>'success','message'=>'Congratulations! Category Item Updated  Successfully']);
-            return redirect()->route('category.show'); 
+            return redirect()->route('category.show');
             }
         }
     }
@@ -111,13 +132,13 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        
+
         if($id)
         {
              DB::table('categories')->where('id', $id)->delete();
              \Session::flash('key', ['class'=>'success','message'=>'Congratulations! Category Item Deleted  Successfully']);
             return redirect()->route('category.show');
         }
-        
+
     }
 }

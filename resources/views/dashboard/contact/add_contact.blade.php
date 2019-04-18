@@ -49,12 +49,12 @@
                <div class="col-md-6">
                   <!-- phone mask -->
                   <div class="form-group">
-                     <label>US phone mask:</label>
+                     <label>Main Mobile :</label>
                      <div class="input-group">
                         <div class="input-group-addon">
                            <i class="fa fa-phone"></i>
                         </div>
-                        <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask name="phone">
+                        <input type="text" class="form-control" data-inputmask='"mask": "(999) 999 99999-9999"' data-mask name="phone">
                      </div>
                   </div>
                </div>
@@ -66,10 +66,10 @@
                      <div class="col-md-6">
                         <div class="form-group">
                             <label class="radio-inline">
-                                <input type="radio" name="gender" value="1">Yes
+                                <input type="radio" name="isWhatsapp" value="1">Yes
                               </label>
                               <label class="radio-inline">
-                                <input type="radio" name="gender" value="0">No
+                                <input type="radio" name="isWhatsapp" value="0">No
                               </label>
                         </div>
                      </div>
@@ -84,7 +84,11 @@
                 <div class="form-group ">
                    <label>Contact Phone 2<span id="id">*</span></label><br>
                    <select name="phone_2_select" class="form-control" >
-                     <option value=""></option>
+                    <option value="">Phone Type</option>
+                    @foreach ($phone_type as $item)
+                    <option value="{{ $item->name}} ">{{ $item->name }}</option>
+                       @endforeach
+
                    </select>
                 </div>
                 <!-- /.form-group -->
@@ -99,7 +103,7 @@
                       <div class="input-group-addon">
                          <i class="fa fa-phone"></i>
                       </div>
-                      <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask name="phone_2">
+                      <input type="text" class="form-control" data-inputmask='"mask": "(999) 999 99999-9999"' data-mask name="phone_2">
                    </div>
                 </div>
              </div>
@@ -109,7 +113,10 @@
                 <div class="form-group ">
                    <label>Contact Phone 3<span id="id">*</span></label><br>
                    <select name="phone_3_select" class="form-control" >
-                     <option value=""></option>
+                        <option value="">Phone Type</option>
+                        @foreach ($phone_type as $item)
+                        <option value="{{ $item->name}}">{{ $item->name }}</option>
+                        @endforeach
                    </select>
                 </div>
                 <!-- /.form-group -->
@@ -124,7 +131,7 @@
                       <div class="input-group-addon">
                          <i class="fa fa-phone"></i>
                       </div>
-                      <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask name="phone_3">
+                      <input type="text" class="form-control" data-inputmask='"mask": "(999) 999 99999-9999"' data-mask name="phone_3">
                    </div>
                 </div>
              </div>
@@ -134,10 +141,10 @@
          </div>
            <!-- /.box-body -->
 
-      
+
       </div>
       <!-- /.box -->
-      
+
       {{-- tabs --}}
 
          <div class="box box-default">
@@ -147,7 +154,7 @@
                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
             </div>
-         </div> 
+         </div>
          <!-- /.box-header -->
          <div class="box-body">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -175,7 +182,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>Address aditional details</label>
@@ -183,7 +190,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>Suburb </label>
@@ -191,7 +198,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>City </label>
@@ -199,7 +206,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-                           
+
                             <div class="col-md-2">
                                <div class="form-group ">
                                   <label>State</label><br>
@@ -209,8 +216,8 @@
                                </div>
                                <!-- /.form-group -->
                             </div>
-                           
-               
+
+
                             <div class="col-md-4">
                                <!-- phone mask -->
                                <div class="form-group">
@@ -223,28 +230,30 @@
                                   </div>
                                </div>
                             </div>
-     
+
                             <div class="col-md-6">
                                <div class="form-group ">
                                   <label>Address Type</label><br>
                                   <select name="tab1_address_type_select"  class="form-control" >
                                     <option value="">Please, select</option>
+
+                    @foreach ($address_type as $item)
+                    <option value="{{ $item->name}}">{{ $item->name }}</option>
+                       @endforeach
                                   </select>
                                </div>
                                <!-- /.form-group -->
                             </div>
-                            
+
                             <div class="col-md-12">
                                <div class="form-group ">
                                   <label>Note</label><br>
-                                  <textarea name="tab1_note" class="form-control" rows="3"  placeholder="Add here any notes about the address" >
-                                   
-                                  </textarea>
+                                  <textarea name="tab1_note" class="form-control" rows="3"  placeholder="Add here any notes about the address" ></textarea>
                                </div>
                                <!-- /.form-group -->
                             </div>
-     
-                            
+
+
                          </div>
                 </div>
 
@@ -259,7 +268,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>Address aditional details</label>
@@ -267,7 +276,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>Suburb </label>
@@ -275,7 +284,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>City </label>
@@ -283,7 +292,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-                           
+
                             <div class="col-md-2">
                                <div class="form-group ">
                                   <label>State</label><br>
@@ -293,8 +302,8 @@
                                </div>
                                <!-- /.form-group -->
                             </div>
-                           
-               
+
+
                             <div class="col-md-4">
                                <!-- phone mask -->
                                <div class="form-group">
@@ -307,28 +316,29 @@
                                   </div>
                                </div>
                             </div>
-     
+
                             <div class="col-md-6">
                                <div class="form-group ">
                                   <label>Address Type</label><br>
                                   <select name="tab2_address_type"  class="form-control" >
                                     <option value="">Please, select</option>
+                                    @foreach ($address_type as $item)
+                    <option value="{{ $item->name}}">{{ $item->name }}</option>
+                       @endforeach
                                   </select>
                                </div>
                                <!-- /.form-group -->
                             </div>
-                            
+
                             <div class="col-md-12">
                                <div class="form-group ">
                                   <label>Note</label><br>
-                                  <textarea name="tab2_note"  class="form-control" rows="3"  placeholder="Add here any notes about the address" >
-                                   
-                                  </textarea>
+                                  <textarea name="tab2_note"  class="form-control" rows="3"  placeholder="Add here any notes about the address" ></textarea>
                                </div>
                                <!-- /.form-group -->
                             </div>
-     
-                            
+
+
                          </div>
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -340,7 +350,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>Address aditional details</label>
@@ -348,7 +358,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>Suburb </label>
@@ -356,7 +366,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-     
+
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label>City </label>
@@ -364,7 +374,7 @@
                                </div>
                             </div>
                             <!-- /.form-group -->
-                           
+
                             <div class="col-md-2">
                                <div class="form-group ">
                                   <label>State</label><br>
@@ -374,8 +384,8 @@
                                </div>
                                <!-- /.form-group -->
                             </div>
-                           
-               
+
+
                             <div class="col-md-4">
                                <!-- phone mask -->
                                <div class="form-group">
@@ -388,28 +398,29 @@
                                   </div>
                                </div>
                             </div>
-     
+
                             <div class="col-md-6">
                                <div class="form-group ">
                                   <label>Address Type</label><br>
                                   <select name="tab3_address_type"  class="form-control" >
                                     <option value="">Please, select</option>
+                                    @foreach ($address_type as $item)
+                    <option value="{{ $item->name}}">{{ $item->name }}</option>
+                       @endforeach
                                   </select>
                                </div>
                                <!-- /.form-group -->
                             </div>
-                            
+
                             <div class="col-md-12">
                                <div class="form-group ">
                                   <label>Note</label><br>
-                                  <textarea name="tab3_note" id="" class="form-control" rows="3"  placeholder="Add here any notes about the address" >
-                                   
-                                  </textarea>
+                                  <textarea name="tab3_note" id="" class="form-control" rows="3"  placeholder="Add here any notes about the address" ></textarea>
                                </div>
                                <!-- /.form-group -->
                             </div>
-     
-                            
+
+
                          </div>
                 </div>
                 <div class="tab-pane fade" id="address_4" role="tabpanel" aria-labelledby="address_4_tab">      <div class="row">
@@ -444,7 +455,7 @@
                          </div>
                       </div>
                       <!-- /.form-group -->
-                     
+
                       <div class="col-md-2">
                          <div class="form-group ">
                             <label>State</label><br>
@@ -454,8 +465,8 @@
                          </div>
                          <!-- /.form-group -->
                       </div>
-                     
-         
+
+
                       <div class="col-md-4">
                          <!-- phone mask -->
                          <div class="form-group">
@@ -474,32 +485,33 @@
                             <label>Address Type</label><br>
                             <select name="tab4_address_type" class="form-control" >
                               <option value="">Please, select</option>
+                              @foreach ($address_type as $item)
+                    <option value="{{ $item->name}}">{{ $item->name }}</option>
+                       @endforeach
                             </select>
                          </div>
                          <!-- /.form-group -->
                       </div>
-                      
+
                       <div class="col-md-12">
                          <div class="form-group ">
                             <label>Note</label><br>
-                            <textarea name="tab4_note" class="form-control" rows="3"  placeholder="Add here any notes about the address" >
-                             
-                            </textarea>
+                            <textarea name="tab4_note" class="form-control" rows="3"  placeholder="Add here any notes about the address" ></textarea>
                          </div>
                          <!-- /.form-group -->
                       </div>
 
-                      
+
                    </div></div>
               </div>
 
-              
+
          </div>
            <!-- /.box-body -->
   </div>
       <!-- /.box -->
       {{-- end of tabs --}}
-       
+
       {{-- profile and occupation  --}}
       <div class="box box-default">
           <div class="box-header with-border">
@@ -512,10 +524,13 @@
 
         <div class="box-body">
             <div class="col-md-6">
-                <div class="form-group ">
+                <div class="form-group">
                    <label>Parnership Type</label><br>
-                   <select name="po_address_type" class="form-control" width="100%" >
+                   <select name="po_partnership_type" class="form-control" >
                      <option value="">Please, select</option>
+                     @foreach ($partnership_type as $item)
+                     <option value="{{ $item->name}}">{{ $item->name }}</option>
+                        @endforeach
                    </select>
                 </div>
                 <!-- /.form-group -->
@@ -533,13 +548,16 @@
               <div class="col-md-6">
                   <div class="form-group">
                     <label>Political Party</label>
-                    <select name="po_political_party_ml" class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                    <select name="po_political_party_ml[]" class="form-control select2" multiple="multiple" data-placeholder="Select Your Political Parties"
                             style="width: 100%;">
-                      <option>Alabama</option>
+                            @foreach ($political_party as $item)
+                            <option value="{{ $item->name}}">{{ $item->name }}</option>
+                               @endforeach
+
                      </select>
                   </div>
                </div>
-  
+
                <div class="col-md-6">
                   <div class="form-group">
                       <label>Gender</label><br>
@@ -557,51 +575,60 @@
                 <div class="col-md-6">
                     <div class="form-group">
                       <label>Occupation</label>
-                      <select name="po_occupation_ml" class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                      <select name="po_occupation_ml[]" class="form-control select2" multiple="multiple" data-placeholder="Select Occupations"
                               style="width: 100%;">
-                        <option>Alabama</option>
+                              @foreach ($occupation as $item)
+                              <option value="{{ $item->name}}">{{ $item->name }}</option>
+                                 @endforeach
                        </select>
                     </div>
                  </div>
-    
-    
-    
+
+
+
                  <div class="col-md-6">
                     <div class="form-group">
                       <label>Marital Status</label>
-                      <select name="po_marital_status" class="form-control select2" multiple="multiple" data-placeholder="Select a State"
-                              >
+                      <select name="po_marital_status" class="form-control"  data-placeholder="Select">
                               <option value="">Please Select</option>
-                        <option value="1">Single</option>
-                        <option value="2">Married</option>
-                        <option value="3">Devoice</option>
+                              @foreach ($marrital_status as $key=>$item)
+
+                              <option value="{{ $key}}">{{ $item->name }}</option>
+                                 @endforeach
 
                        </select>
                     </div>
                  </div>
-    
+
                  <div class="col-md-6">
                     <div class="form-group">
                       <label>Religions</label>
-                      <select name="religion_ml" class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                      <select name="religion_ml[]" class="form-control select2" multiple="multiple" data-placeholder="Select Religions"
                               >
-                        <option>Alabama</option>
+
+                        @foreach ($religion as $item)
+                        <option value="{{ $item->name}}">{{ $item->name }}</option>
+                           @endforeach
                        </select>
                     </div>
                  </div>
-    
+
                  <div class="col-md-6">
                     <div class="form-group">
                       <label>Group of Interest</label>
-                      <select name="po_goi_ml" class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                      <select name="po_goi_ml[]" class="form-control select2" multiple="multiple" data-placeholder="Select Group Of Interest"
                               >
-                        <option>Alabama</option>
+
+                              @foreach ($group_of_interest as $item)
+                              <option value="{{ $item->name}}">{{ $item->name }}</option>
+                                 @endforeach
+                             </select>
                        </select>
                     </div>
                  </div>
              </div>
 
-             
+
         </div>
       </div>
           {{-- / profile and occupation --}}
@@ -662,7 +689,7 @@
                  <div class="col-md-8">
                     <div class="form-group">
                        <label for="">City 1</label>
-                     
+
                       <select class="form-control select2" name="voter_city_select" multiple="multiple" data-placeholder="Select a State"
                               style="width: 100%;">
                         <option>City</option>
@@ -670,13 +697,13 @@
                     </div>
                  </div>
 
-                  
-                 
+
+
                </div>
                <!-- /.box-body -->
             </div>
             <!-- /.box -->
-            
+
             <!-- /.box -->
          </div>
          <!-- /.col (left) -->
@@ -686,30 +713,30 @@
                    <h3 class="box-title">User Account/Access Login</h3>
                 </div>
                 <div class="box-body">
- 
-                
+
+
                 <div class="form-group">
                    <label>Email(Login)</label>
                       <input type="email" class="form-control" name="user_email" placeholder="email@domain.com">
                    <!-- /.input group -->
                 </div>
                 <!-- /.form group -->
- 
- 
+
+
                 <div class="form-group">
                    <label>Create Password</label>
                       <input type="password" minlength="3" class="form-control" name="user_password" placeholder="Minimum 3 Characters">
                    <!-- /.input group -->
                 </div>
                 <!-- /.form group -->
- 
+
                 <div class="form-group">
                    <label>Repeate Password</label>
                       <input type="password" minlength="3" class="form-control" name="user_cpassword" placeholder="Minimum 3 Characters">
                    <!-- /.input group -->
                 </div>
                 <!-- /.form group -->
- 
+
                <div class="col-md-7">
                    <div class="form-group">
                        <label>Profile Picture (JPG or PNG)</label>
@@ -717,33 +744,33 @@
                        <!-- /.input group -->
                     </div>
                     <!-- /.form group -->
- 
+
                </div>
- 
+
                <div class="col-md-5">
                    <div class="form-group">
                         <label>Upload Image</label><br>
                        <button type="file" class="btn btn-info" name="user_pp1" > Select Image
-                     
+
                        <!-- /.input group -->
                     </div>
                     <!-- /.form group -->
- 
+
                </div>
- 
+
              </div>
               <!-- /.box-body -->
              </div>
             <!-- /.box -->
             <!-- iCheck -->
-            
+
             <!-- /.box -->
          </div>
          <!-- /.col (right) -->
       </div>
       <!-- /.row -->
 
-      
+
    </section>
    <div class="text-center"><button class="btn btn-primary btn-sx contact_add_button" type="submit">
   Add Contact</button></div>

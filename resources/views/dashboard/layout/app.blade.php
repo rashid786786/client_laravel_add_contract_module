@@ -16,6 +16,9 @@
   <!-- Select2 -->
   <link rel="stylesheet" href="{{asset('dashboard/bower_components/select2/dist/css/select2.min.css')}}">
 
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{ asset('dashboard/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dashboard/dist/css/AdminLTE.min.css')}}">
 
@@ -370,21 +373,21 @@
         </li>
 
         <li class="active treeview">
-            <a href="{{route('contact.add')}}">
+            <a href="#">
               <i class="fa fa-files-o"></i> <span>Category</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              
-                <li class="active"><a href="{{route('category.add')}}"><i class="fa fa-list"></i>Add Category</a></li>
+
+                <li class=""><a href="{{route('category.show')}}"><i class="fa fa-list"></i>Add Category</a></li>
                 <li class=""><a href="{{route('category.show')}}"><i class="fa fa-list"></i> Category List</a></li>
             </ul>
         </li>
 
 
-       
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
@@ -546,14 +549,14 @@
     <!-- /.sidebar -->
   </aside>
 
- 
-  
-       
-        
-  
+
+
+
+
+
 @if(Session::has('key'))
 <section class="content-header">
-    
+
     <div class="breadcrumb">
       <div class="set_alert_position alert alert-{{\Session::get('key')['class']}} alert-dismissible pull-right col-sm-12 col-lg-12 col-md-12">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -561,10 +564,10 @@
     </div>
   </div>
   </section>
-  
-@endif 
-  
- 
+
+@endif
+
+
 
 
   {{-- contetn shows here --}}
@@ -830,19 +833,23 @@
 <!-- iCheck 1.0.1 -->
 <script src="../../plugins/iCheck/icheck.min.js"></script>
 
+<!-- DataTables -->
+<script src="{{ asset('dashboard/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('dashboard/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+
 
 <script>
     $(function () {
       //Initialize Select2 Elements
       $('.select2').select2()
-  
+
       //Datemask dd/mm/yyyy
       $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
       //Datemask2 mm/dd/yyyy
       $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
       //Money Euro
       $('[data-mask]').inputmask()
-  
+
       //Date range picker
       $('#reservation').daterangepicker()
       //Date range picker with time picker
@@ -865,12 +872,12 @@
           $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
         }
       )
-  
+
       //Date picker
       $('#datepicker').datepicker({
         autoclose: true
       })
-  
+
       //iCheck for checkbox and radio inputs
       $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
         checkboxClass: 'icheckbox_minimal-blue',
@@ -886,17 +893,50 @@
         checkboxClass: 'icheckbox_flat-green',
         radioClass   : 'iradio_flat-green'
       })
-  
+
       //Colorpicker
       $('.my-colorpicker1').colorpicker()
       //color picker with addon
       $('.my-colorpicker2').colorpicker()
-  
+
       //Timepicker
       $('.timepicker').timepicker({
         showInputs: false
       })
     })
   </script>
+  <script>
+        $(function () {
+          $('#example1').DataTable()
+
+          $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+          })
+        })
+      </script>
+<script>
+        $(document).ready(function() {
+            //$('table.display').DataTable();
+            $('table.display').dataTable({
+                autoWidth: false,
+                'bInfo':false,
+                "showNEntries" : false,
+                columns : [
+                    { width: '10%' },
+                    { width: '90%' },
+                    { width: '100px', class : 'buttons' }
+               ]
+            })
+        } );
+
+
+
+
+</script>
 </body>
 </html>

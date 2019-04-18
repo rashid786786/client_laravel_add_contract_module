@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('full_name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('gender')->nullable();
+            $table->tinyInteger('isWhatsapp')->nullable()->default(1);
             $table->string('phone_2_select')->nullable();
             $table->string('phone_2')->nullable();
             $table->string('phone_3_select')->nullable();
@@ -70,9 +70,10 @@ class CreateContactsTable extends Migration
             $table->string('po_political_party_ml')->nullable();
             $table->string('po_gender')->nullable();
             $table->string('po_occupation_ml')->nullable();
-            $table->integer('po_marital_status')->nullable();
+            $table->tinyInteger('po_marital_status')->nullable();
             $table->string('religion_ml')->nullable();
             $table->string('po_goi_ml')->nullable();
+            $table->string('po_partnership_type')->nullable();
 
             //Voter Profile
             $table->integer('voter_title')->nullable();
@@ -88,8 +89,8 @@ class CreateContactsTable extends Migration
             $table->string('user_pp')->nullable();
             $table->string('user_pp1')->nullable();
 
-            
-            
+
+
             $table->timestamps();
         });
     }
